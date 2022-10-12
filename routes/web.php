@@ -32,8 +32,12 @@ route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logou
 // User management all routes
 Route::prefix('users')->group(function(){
     route::get('/view',[UserController::class,'UserView'])->name('user.view');
+    route::get('/add',[UserController::class,'UserAdd'])->name('users.add');
+    route::post('/store',[UserController::class,'UserStore'])->name('users.store');
+    route::get('/edit/{id}',[UserController::class,'UserEdit'])->name('users.edit');
+    route::post('/update/{id}',[UserController::class,'UserUpdate'])->name('users.update');
+    route::get('/delete/{id}',[UserController::class,'UserDelete'])->name('users.delete');
+
     
-
-
 });
 

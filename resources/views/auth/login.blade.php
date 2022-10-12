@@ -38,7 +38,7 @@
 										<div class="input-group-prepend">
 											<span class="input-group-text bg-transparent text-white"><i class="ti-user"></i></span>
 										</div>
-										<input type="email" name="email" id="name" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Username">
+										<input type="email" name="email" id="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Username">
 									</div>
 								</div>
 								<div class="form-group">
