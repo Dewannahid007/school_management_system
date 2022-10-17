@@ -16,7 +16,7 @@
             <div class="box-body">
               <div class="row">
                 <div class="col">
-                  <form action="{{route('fee.amount.store')}}" method="post">
+                  <form action="{{route('fee.amount.update',$editData[0]->fee_category_id)}}" method="post">
                      @csrf <div class="row">
                       <div class="col-12">
                         <div class="add_item">
