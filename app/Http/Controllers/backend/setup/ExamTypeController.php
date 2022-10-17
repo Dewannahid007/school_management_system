@@ -44,7 +44,7 @@ class ExamTypeController extends Controller
     public function UpdateExamType(Request $request,$id){
         $data=ExamType::find($id);
         $validatedData=$request->validate([
-            'name'=>'required | unique:exam_types,name'.$data->id
+            'name'=>'required|unique:exam_types,name,'.$data->id
 
         ]);
         $data->name=$request->name;

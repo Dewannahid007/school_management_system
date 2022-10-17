@@ -10,20 +10,20 @@
                <!-- Basic Forms -->
                <div class="box">
                   <div class="box-header with-border">
-                     <h4 class="box-title">Edit Exam Type </h4>
+                     <h4 class="box-title">Edit Subject </h4>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
                      <div class="row">
                         <div class="col">
-                           <form action="{{route('exam.type.update',$records->id)}}" method="post">
+                           <form action="{{route('school.subject.update',$data->id)}}" method="post">
                               @csrf
                               <div class="row">
                                  <div class="col-md-12">
                                           <div class="form-group">
-                                             <h5>Exam Type <span class="text-danger">*</span></h5>
+                                             <h5>Subject Name <span class="text-danger">*</span></h5>
                                              <div class="controls">
-                                                <input type="text" name="name" value="{{$records->name}}" class="form-control" required="" />
+                                                <input type="text" name="name" value="{{$data->name}}" class="form-control" required="" />
                                              </div>
                                           </div>                            
                                  </div>
