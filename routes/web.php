@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\setup\ExamTypeController;
 use App\Http\Controllers\backend\setup\FeeAmountController;
 use App\Http\Controllers\backend\setup\FeeCategoryController;
 use App\Http\Controllers\backend\setup\StudentClassController;
@@ -101,21 +102,13 @@ Route::prefix('setups')->group(function(){
     route::get('fee/amount/details/{fee_category_id}',[FeeAmountController::class,'DetailsFeeAmount'])->name('fee.amount.details');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    route::get('exam/type/view',[ExamTypeController::class,'ExamType'])->name('exam.type.view');
+    route::get('exam/type/add',[ExamTypeController::class,'AddExamType'])->name('exam.type.add');
+    route::post('exam/type/store',[ExamTypeController::class,'StoreExamType'])->name('exam.type.store');
+    route::get('exam/type/edit/{id}',[ExamTypeController::class,'EditExamType'])->name('exam.type.edit');
+    route::post('exam/type/update/{id}',[ExamTypeController::class,'UpdateExamType'])->name('exam.type.update');
+    route::get('exam/type/delete/{id}',[ExamTypeController::class,'DeleteExamType'])->name('exam.type.delete');
 
 
 
 });
-
