@@ -11,6 +11,7 @@ use App\Http\Controllers\backend\setup\SchoolSubjectController;
 use App\Http\Controllers\backend\setup\StudentClassController;
 use App\Http\Controllers\backend\setup\StudentGroupController;
 use App\Http\Controllers\backend\setup\StudentShiftController;
+use App\Http\Controllers\backend\student\StudentRegistrationController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\year\StudentYearController;
 use Illuminate\Support\Facades\Route;
@@ -135,24 +136,10 @@ Route::prefix('setups')->group(function(){
     route::post('designation/update/{id}',[DesignationController::class,'UpdateDesignation'])->name('designation.update');
     route::get('designation/delete/{id}',[DesignationController::class,'DeleteDesignation'])->name('designation.delete');
 
-    
+});
 
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-  
+Route::prefix('students')->group(function(){
+    route::get('student/reg/view',[StudentRegistrationController::class,'StudentRegistration'])->name('student.reg.view');
 
 
 
