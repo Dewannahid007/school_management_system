@@ -140,6 +140,9 @@ Route::prefix('setups')->group(function(){
 
 Route::prefix('students')->group(function(){
     route::get('student/reg/view',[StudentRegistrationController::class,'StudentRegistration'])->name('student.reg.view');
+    route::get('student/reg/add',[StudentRegistrationController::class,'AddStudent'])->name('student.reg.add');
+    route::post('student/reg/store',[StudentRegistrationController::class,'StoreStudent'])->name('student.reg.store');
+
 
 
 
