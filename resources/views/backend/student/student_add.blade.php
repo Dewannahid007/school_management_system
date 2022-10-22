@@ -199,7 +199,7 @@
                                             <div class="form-group">
                                                 <h5>Student Image <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="file" name="name" id="image" class="form-group">
+                                                    <input type="file" name="image" id="image" class="form-group">
 
                                                 </div>
                                             </div>
