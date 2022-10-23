@@ -143,6 +143,8 @@ Route::prefix('students')->group(function(){
     route::get('reg/add',[StudentRegistrationController::class,'AddStudent'])->name('student.reg.add');
     route::post('reg/store',[StudentRegistrationController::class,'StoreStudent'])->name('student.reg.store');
     route::get('year/class/wise',[StudentRegistrationController::class,'StudentClassYearWise'])->name('student.year.class.wise');
+    route::get('reg/edit/{student_id}',[StudentRegistrationController::class,'StudentRegEdit'])->name('student.reg.edit');
+    route::post('reg/update/{student_id}',[StudentRegistrationController::class,'StudentRegUpdate'])->name('student.reg.update');
 
 
 

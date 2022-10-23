@@ -16,4 +16,8 @@ class AssignStudent extends Model
     public function student_year(){
         return $this->belongsTo(StudentYear::class,'year_id','id');
     }
+
+    public function discount(){
+        return $this->belongsTo(DiscountStudent::class,'id','assign_student_id');
+    }
 }
