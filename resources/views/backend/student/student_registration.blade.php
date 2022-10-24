@@ -97,7 +97,7 @@
 								<td>{{$value['student']['code']}}</td>
 								<td> 
                                     <a href="{{route('student.reg.edit',$value->student_id)}}" class="btn btn-primary">Edit</a> 
-                                    <a href="" class="btn btn-danger" id="delete">Delete</a>
+                                    <a href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-info" >Promotion</a>
                                 </td>
 							</tr>
                             @endforeach
@@ -140,7 +140,7 @@
 								<td>{{$value['student']['code']}}</td>
 								<td> 
                                     <a href="{{route('student.reg.edit',$value->student_id)}}" class="btn btn-primary">Edit</a> 
-                                    <a href="" class="btn btn-danger" id="delete">Delete</a>
+                                    <a href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-info">Promotion</a>
                                 </td>
 							</tr>
                             @endforeach

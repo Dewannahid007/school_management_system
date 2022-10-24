@@ -44,7 +44,7 @@ class StudentYearController extends Controller
     public function UpdateYear(Request $request , $id){
         $data=StudentYear::find($id);
         $ValidatedData=$request->validate([
-            'name'=>'required | unique:student_years,name'.$data->id
+            'name'=>'required | unique:student_years,name'
 
         ]);
         $data->name=$request->name;
