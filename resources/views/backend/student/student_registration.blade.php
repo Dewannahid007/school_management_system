@@ -97,7 +97,8 @@
 								<td>{{$value['student']['code']}}</td>
 								<td> 
                                     <a href="{{route('student.reg.edit',$value->student_id)}}" class="btn btn-primary">Edit</a> 
-                                    <a href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-info" >Promotion</a>
+                                    <a href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-success" >Promote</a>
+
                                 </td>
 							</tr>
                             @endforeach

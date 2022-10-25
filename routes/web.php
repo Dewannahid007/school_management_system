@@ -12,6 +12,7 @@ use App\Http\Controllers\backend\setup\StudentClassController;
 use App\Http\Controllers\backend\setup\StudentGroupController;
 use App\Http\Controllers\backend\setup\StudentShiftController;
 use App\Http\Controllers\backend\student\StudentRegistrationController;
+use App\Http\Controllers\backend\student\StudentRollController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\year\StudentYearController;
 use Illuminate\Support\Facades\Route;
@@ -146,7 +147,13 @@ Route::prefix('students')->group(function(){
     route::get('reg/edit/{student_id}',[StudentRegistrationController::class,'StudentRegEdit'])->name('student.reg.edit');
     route::post('reg/update/{student_id}',[StudentRegistrationController::class,'StudentRegUpdate'])->name('student.reg.update');
     route::get('reg/promotion/{student_id}',[StudentRegistrationController::class,'StudentRegPromotion'])->name('student.reg.promotion');
-    route::post('reg/update/promotion/{student_id}',[StudentRegistrationController::class,'StudentUpdatePromotion'])->name('student.reg.promo');
+
+    // Student Roll Generate
+    route::get('roll/generate/view',[StudentRollController::class,'RollGenerateView'])->name('roll.generate.view');
+    route::get('reg/getstudents',[StudentRollController::class,'GetStudents'])->name('student.registration.getstudents');
+    route::post('roll/generate/store',[StudentRollController::class,'StudentRollStore'])->name('roll.generate.store');
+
+
 
 
 

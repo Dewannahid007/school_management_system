@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\CommonMark\Extension\Table\Table;
 use PhpParser\Node\Expr\New_;
+use PDF;
 
 class StudentRegistrationController extends Controller
 {
@@ -240,5 +241,4 @@ class StudentRegistrationController extends Controller
      return redirect()->route('student.reg.view')->with($notification);
 
     }
-
 }
