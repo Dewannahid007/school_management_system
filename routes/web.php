@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\backend\employee\EmployeeRegistraionController;
 use App\Http\Controllers\backend\ProfileController;
 use App\Http\Controllers\backend\setup\AssignSubjectController;
 use App\Http\Controllers\backend\setup\DesignationController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\backend\setup\SchoolSubjectController;
 use App\Http\Controllers\backend\setup\StudentClassController;
 use App\Http\Controllers\backend\setup\StudentGroupController;
 use App\Http\Controllers\backend\setup\StudentShiftController;
+use App\Http\Controllers\backend\student\RegistrationFeeController;
 use App\Http\Controllers\backend\student\StudentRegistrationController;
 use App\Http\Controllers\backend\student\StudentRollController;
 use App\Http\Controllers\backend\UserController;
@@ -147,18 +149,24 @@ Route::prefix('students')->group(function(){
     route::get('reg/edit/{student_id}',[StudentRegistrationController::class,'StudentRegEdit'])->name('student.reg.edit');
     route::post('reg/update/{student_id}',[StudentRegistrationController::class,'StudentRegUpdate'])->name('student.reg.update');
     route::get('reg/promotion/{student_id}',[StudentRegistrationController::class,'StudentRegPromotion'])->name('student.reg.promotion');
+    route::get('reg/details/{student_id}',[StudentRegistrationController::class,'StudentRegDetails'])->name('student.reg.details');
 
     // Student Roll Generate
     route::get('roll/generate/view',[StudentRollController::class,'RollGenerateView'])->name('roll.generate.view');
     route::get('reg/getstudents',[StudentRollController::class,'GetStudents'])->name('student.registration.getstudents');
     route::post('roll/generate/store',[StudentRollController::class,'StudentRollStore'])->name('roll.generate.store');
 
+    //student Registration Fee
+    route::get('reg/fee/view',[RegistrationFeeController::class,'RegistrationFeeView'])->name('registration.fee.view');
+    route::get('reg/fee/classwiseData',[RegistrationFeeController::class,'RegFeeClassData'])->name('student.registration.fee.classwise.get');
+    route::get('reg/fee/payslip',[RegistrationFeeController::class,'RegFeePayslip'])->name('student.registration.fee.payslip');
 
+});
 
+Route::prefix('employees')->group(function(){
+    // Employee Registration Fee
 
-
-
-
+    route::get('reg/view',[EmployeeRegistraionController::class,'EmployeeView'])->name('employee.reg.view');
 
 
 

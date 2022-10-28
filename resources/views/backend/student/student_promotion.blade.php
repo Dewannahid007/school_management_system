@@ -17,7 +17,7 @@
                         <div class="box-body">
                             <div class="row">
                                 <div class="col">
-                                    <form action="{{route('student.reg.promo',$editData->student_id)}}" enctype="multipart/form-data" method="post">
+                                    <form action="{{route('student.reg.promotion',$editData->student_id)}}" enctype="multipart/form-data" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$editData->id}}">
                                         <div class="row">

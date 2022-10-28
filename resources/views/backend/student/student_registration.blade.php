@@ -96,8 +96,10 @@
 								</td>
 								<td>{{$value['student']['code']}}</td>
 								<td> 
-                                    <a href="{{route('student.reg.edit',$value->student_id)}}" class="btn btn-primary">Edit</a> 
-                                    <a href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-success" >Promote</a>
+                                    <a title="Edit" href="{{route('student.reg.edit',$value->student_id)}}" class="btn btn-info"><i class="fa fa-edit"></i></a> 
+                                    <a title="Promotion" href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-primary"><i class="fa fa-check"></i></a>
+									<a title="Details" href="{{route('student.reg.details',$value->student_id)}}" class="btn btn-danger" ><i class="fa fa-eye "></i></a>
+
 
                                 </td>
 							</tr>
@@ -140,8 +142,9 @@
 								</td>
 								<td>{{$value['student']['code']}}</td>
 								<td> 
-                                    <a href="{{route('student.reg.edit',$value->student_id)}}" class="btn btn-primary">Edit</a> 
-                                    <a href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-info">Promotion</a>
+								<a title="Edit" href="{{route('student.reg.edit',$value->student_id)}}" class="btn btn-info"><i class="fa fa-edit"></i></a> 
+                                <a title="Promotion" href="{{route('student.reg.promotion',$value->student_id)}}" class="btn btn-primary"><i class="fa fa-check"></i></a>
+								<a title="Details" href="{{route('student.reg.details',$value->student_id)}}" class="btn btn-danger" ><i class="fa fa-eye "></i></a>
                                 </td>
 							</tr>
                             @endforeach

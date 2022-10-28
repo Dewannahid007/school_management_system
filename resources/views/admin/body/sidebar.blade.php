@@ -87,9 +87,25 @@ $route =Route::current()->getName();
           <ul class="treeview-menu">
             <li><a href="{{route('student.reg.view')}}"><i class="ti-more"></i>Student Registration</a></li>
             <li><a href="{{route('roll.generate.view')}}"><i class="ti-more"></i>Student Roll Generator</a></li>
+            <li><a href="{{route('registration.fee.view')}}"><i class="ti-more"></i>Registration Fee</a></li>
+
 
           </ul>
         </li> 
+
+        <li class="treeview {{ ($prefix == '/employees')?'active':'' }}">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Employee Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('employee.reg.view')}}"><i class="ti-more"></i>Employee Registration</a></li>
+
+          </ul>
+        </li>
 
         <li class="header nav-small-cap">User Interface</li>
 		  

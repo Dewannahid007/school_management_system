@@ -20,4 +20,8 @@ class AssignStudent extends Model
     public function discount(){
         return $this->belongsTo(DiscountStudent::class,'id','assign_student_id');
     }
+    public function group(){
+        return $this->belongsTo(StudentGroup::class,'group_id','id');
+    }
+
 }

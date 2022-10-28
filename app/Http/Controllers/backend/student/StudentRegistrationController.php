@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\CommonMark\Extension\Table\Table;
 use PhpParser\Node\Expr\New_;
-use PDF;
+use niklasravnsborg\LaravelPdf\Facades\Pdf;
+
 
 class StudentRegistrationController extends Controller
 {
@@ -241,4 +242,14 @@ class StudentRegistrationController extends Controller
      return redirect()->route('student.reg.view')->with($notification);
 
     }
+
+    public function StudentRegDetails($student_id){
+        $data['details'] = AssignStudent::with(['student','discount'])->where('student_id',$student_id)->first();
+        $pdf = PDF::loadView('backend.student.student_details_pdf', $data);
+        $pdf->SetProtection(['copy', 'print'], '', 'pass');
+        return $pdf->stream('document.pdf');
+
+    }
 }
+
+
