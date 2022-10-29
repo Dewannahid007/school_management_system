@@ -167,6 +167,8 @@ Route::prefix('employees')->group(function(){
     // Employee Registration Fee
 
     route::get('reg/view',[EmployeeRegistraionController::class,'EmployeeView'])->name('employee.reg.view');
+    route::get('reg/add',[EmployeeRegistraionController::class,'EmployeeAdd'])->name('employee.registration.add');
+    route::post('reg/store',[EmployeeRegistraionController::class,'EmployeeStore'])->name('employee.reg.store');
 
 
 
