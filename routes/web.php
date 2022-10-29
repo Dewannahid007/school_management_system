@@ -169,6 +169,9 @@ Route::prefix('employees')->group(function(){
     route::get('reg/view',[EmployeeRegistraionController::class,'EmployeeView'])->name('employee.reg.view');
     route::get('reg/add',[EmployeeRegistraionController::class,'EmployeeAdd'])->name('employee.registration.add');
     route::post('reg/store',[EmployeeRegistraionController::class,'EmployeeStore'])->name('employee.reg.store');
+    route::get('reg/edit/{id}',[EmployeeRegistraionController::class,'EmployeeEdit'])->name('employee.reg.edit');
+    route::post('reg/update/{id}',[EmployeeRegistraionController::class,'EmployeeUpdate'])->name('employee.reg.update');
+    route::get('reg/details/{id}',[EmployeeRegistraionController::class,'EmployeeDetails'])->name('employee.reg.details');
 
 
 

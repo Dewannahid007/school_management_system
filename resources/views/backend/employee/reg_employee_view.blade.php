@@ -47,8 +47,8 @@
                                 <td> {{$employee->code}}</td>
                                 @endif
 								<td> 
-                                    <a href="{{route('designation.edit',$employee->id)}}" class="btn btn-primary">Edit</a> 
-                                    <a href="{{route('designation.delete',$employee->id)}}" class="btn btn-danger" id="delete">Delete</a>
+                                    <a href="{{route('employee.reg.edit',$employee->id)}}" class="btn btn-primary">Edit</a> 
+                                    <a href="{{route('employee.reg.details',$employee->id)}}" class="btn btn-danger" >Details</a>
                                 </td>
 							</tr>
                             @endforeach

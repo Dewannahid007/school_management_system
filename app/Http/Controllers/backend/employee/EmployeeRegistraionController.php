@@ -8,6 +8,7 @@ use App\Models\EmployeeSalaryLog;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use niklasravnsborg\LaravelPdf\Facades\Pdf;
 
 class EmployeeRegistraionController extends Controller
 {
@@ -94,6 +95,54 @@ class EmployeeRegistraionController extends Controller
          );
          return redirect()->route('employee.reg.view')->with($notification);
         
+    }
+    public function EmployeeEdit($id){
+
+        $data['editData'] = User::find($id);
+        $data['designation'] = Designation::all();
+
+        return view('backend.employee.reg_employee_edit',$data);
+
+    }
+
+    public function EmployeeUpdate(Request $request,$id){
+
+            $user = User::find($id);
+            $user->name=$request->name;
+            $user->fname=$request->fname;
+            $user->mname=$request->mname;
+            $user->mobile=$request->mobile;
+            $user->address=$request->address;
+            $user->gender=$request->gender;
+            $user->religion=$request->religion;
+            $user->designation_id=$request->designation_id;
+            $user->dob =date('y-m-d',strtotime($request->dob));
+
+            if($request->file('image')){
+            $file=$request->file('image');
+            unlink(public_path('upload/employee_images/'.$user->image));
+            $filename=date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/employee_images'),$filename);
+            $user['image']=$filename;
+              }
+              $user->save(); 
+
+            $notification =array(
+    
+                'message'=>'Employee Registration Updated SuccessFully',
+                'alert-type'=>'success'
+             );
+             return redirect()->route('employee.reg.view')->with($notification);
+
+    }
+    public function EmployeeDetails($id){
+        $data['details'] = User::find($id);
+        $pdf= PDF::loadView('backend.employee.employee_details_pdf',$data);
+        $pdf->SetProtection(['copy','print'], '', 'pass');
+        return $pdf->stream('document.pdf');
+
+
+
     }
     
 }
