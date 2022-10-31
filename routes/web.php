@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\employee\EmployeeRegistraionController;
+use App\Http\Controllers\backend\employee\EmployeeSalaryController;
 use App\Http\Controllers\backend\ProfileController;
 use App\Http\Controllers\backend\setup\AssignSubjectController;
 use App\Http\Controllers\backend\setup\DesignationController;
@@ -173,7 +174,14 @@ Route::prefix('employees')->group(function(){
     route::post('reg/update/{id}',[EmployeeRegistraionController::class,'EmployeeUpdate'])->name('employee.reg.update');
     route::get('reg/details/{id}',[EmployeeRegistraionController::class,'EmployeeDetails'])->name('employee.reg.details');
 
-
+    //Employee Salary 
+    
+    route::get('salary/view',[EmployeeSalaryController::class,'SalaryView'])->name('employee.salary.view');
+    route::get('salary/increment/{id}',[EmployeeSalaryController::class,'SalaryIncrement'])->name('employee.salary.increment');
+    route::post('salary/increment/store/{id}',[EmployeeSalaryController::class,'SalaryIncrementStore'])->name('update.imcrement.store');
+    route::get('salary/details/{id}',[EmployeeSalaryController::class,'SalaryDetails'])->name('employee.salary.details');
 
 
 });
+
+
